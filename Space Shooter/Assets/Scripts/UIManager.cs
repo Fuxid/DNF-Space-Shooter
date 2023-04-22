@@ -34,9 +34,14 @@ public class UIManager : MonoBehaviour
         _LivesImg.sprite = _liveSprites[currentLives];
         if (currentLives <= 0)
         {
-            GameOverPopUp(true);
-            StartCoroutine(GameOverFlickerRoutine());
+            GameOverSequence();
         }
+    }
+
+    void GameOverSequence()
+    {
+        GameOverPopUp(true);
+        StartCoroutine(GameOverFlickerRoutine());
     }
 
     public void GameOverPopUp(bool condition)
